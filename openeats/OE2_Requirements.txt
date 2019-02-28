@@ -24,7 +24,7 @@ reportlab==2.5
 django-grappelli==2.4.5
 django-relationships==0.3.3
 django-tastypie==0.10.0
-lxml==3.2.3
+lxml
 django-registration-redux==1.1
 https://github.com/qgriffith/django-ratings/zipball/stable
 https://bitbucket.org/fcurella/django-profiles/get/5c982ce7c040.zip
