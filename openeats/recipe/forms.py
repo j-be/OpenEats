@@ -6,7 +6,6 @@ import django.forms as forms
 from django.forms.models import BaseInlineFormSet
 from django.core.mail import EmailMessage, BadHeaderError
 from django.utils.translation import ugettext_lazy as _
-from django.conf import settings
 from django.contrib.sites.models import Site
 from django.template import loader, RequestContext
 from django.http import HttpResponse

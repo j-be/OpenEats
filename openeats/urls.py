@@ -1,4 +1,4 @@
-from django.conf.urls import *
+from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.views.generic import TemplateView
 from openeats.accounts.forms import ProfileForm
