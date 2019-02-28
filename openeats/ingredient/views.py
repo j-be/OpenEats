@@ -1,5 +1,6 @@
+import json
+
 from django.http import HttpResponse
-from django.utils import simplejson
 from models import Ingredient
 
 
@@ -13,5 +14,5 @@ def autocomplete_ing(request):
     results = []
     for ing_item in ing_list:
         results.append(" ".join(ing_item))
-    json = simplejson.dumps(results)
-    return HttpResponse(json, mimetype="application/json")
+    jsonStr = json.dumps(results)
+    return HttpResponse(jsonStr, mimetype="application/json")

@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
@@ -10,7 +12,6 @@ from models import Recipe, StoredRecipe, NoteRecipe, ReportedRecipe
 from openeats.ingredient.models import Ingredient
 from forms import RecipeForm,IngItemFormSet, RecipeSendMail
 from djangoratings.views import AddRatingView
-from django.utils import simplejson
 from django.conf import settings
 from django.db.models import F
 from reportlab.lib import colors
@@ -130,8 +131,8 @@ def recipeRate(request, object_id, score):
     avg = r.rating.score / r.rating.votes
     results['avg'] = avg
     results['votes'] = r.rating.votes
-    json = simplejson.dumps(results)
-    return HttpResponse(json, mimetype="application/json")
+    jsonStr = json.dumps(results)
+    return HttpResponse(jsonStr, mimetype="application/json")
 
 
 @login_required
