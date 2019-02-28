@@ -152,7 +152,7 @@ INSTALLED_APPS = (
     'pagination',
     'django_extensions',
 #    'relationships',
-#    'tastypie',
+    'tastypie',
     'openeats',
     'openeats.recipe',
     'openeats.recipe_groups',

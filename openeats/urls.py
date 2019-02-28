@@ -4,8 +4,8 @@ from django.views.generic import TemplateView
 from openeats.accounts.forms import ProfileForm
 import helpers.signals  #needed to import the signal for when a user is saved their profile is created
 from registration.views import RegistrationView
-from relationships.listeners import attach_relationship_listener
-attach_relationship_listener()
+#from relationships.listeners import attach_relationship_listener
+#attach_relationship_listener()
 register = RegistrationView.as_view()
 
 # Uncomment the next two lines to enable the admin:
@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     ('^profiles/edit', 'profiles.views.edit_profile', {'form_class': ProfileForm,}),
     (r'^profiles/', include('profiles.urls')),
     (r'^rosetta/', include('rosetta.urls')),
-    (r'^follow/', include('relationships.urls')),
+#    (r'^follow/', include('relationships.urls')),
     (r'^search/', include('haystack.urls')),
     (r'^robots.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
     (r'^accounts/logout/$', 'openeats.accounts.views.logout_page'),
